@@ -46,20 +46,6 @@ class PCA():
         plt.tight_layout()
         plt.show()
 
-data = [[1,1,4,5] , [1,2,4,4]]
-data = np.asarray(data)
-mean = np.mean(data , axis=1)
-print(mean)
-covv = np.cov(data)
-print(covv)
-eigen_value , eigen_vector = np.linalg.eig(covv)
-eigen_value = np.asarray(eigen_value,float)
-eigen_vector = np.asarray(eigen_vector,float)
-print(eigen_value)
-print(eigen_vector)
-print(data-np.transpose(mean))
-
-"""
 width , high = 50 , 50
 #read_images
 train = [(i,np.reshape(np.asarray(Image.open(img).convert('L').resize((width,high))),(width*high))) for i in range(1,29) for img in glob.glob("../../Dataset/Faces/data/"+str(i)+"/*.jpg")]
@@ -93,4 +79,3 @@ correct = np.sum(predict_y == test_y)
 print("%d out of %d predictions correct" % (correct, len(predict_y)))
 
 print("accuracy = ", correct / len(predict_y) * 100)
-"""
